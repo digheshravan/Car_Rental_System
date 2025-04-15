@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="car-card" *ngIf="car">
+      <div nz-row class="car-row">
+        <!-- Car Image -->
+        <div nz-col nzSpan="8" class="car-image-container">
+          <img class="car-image" [src]="processedImage" alt="Car Image" />
+        </div>
+  
+        <!-- Car Details -->
+        <div nz-col nzSpan="16" class="car-details">
+          <h2 class="car-title">
+            {{ car.brand }} - {{ car.modelName }}
+          </h2>
+          <hr />
+          <h5 class="car-info">
+            Price: <b>₹{{ car.rentalPrice }}</b> -
+            Color: <b>{{ car.color }}</b> -
+            Transmission: <b>{{ car.transmission }}</b> -
+            Type: <b>{{ car.fuelType }}</b>
+          </h5>
+          <hr />
+        </div>
+      </div>
+  
+      <!-- 🚗 Booking Form now directly inside car-card -->
+      <div class="floating-form-wrapper">
+        <form [formGroup]="validateForm">
+          <h2>Choose Booking Dates</h2>
+  
+          <nz-form-item>
+            <nz-form-label nzFor="fromDate">From Date</nz-form-label>
+            <nz-form-control>
+              <nz-date-picker
+                formControlName="fromDate"
+                nzPlaceHolder="From Date"
+                [nzFormat]="dateFormat"
+                id="fromDate"
+              ></nz-date-picker>
+            </nz-form-control>
+          </nz-form-item>
+  
+          <nz-form-item>
+            <nz-form-label nzFor="toDate">To Date</nz-form-label>
+            <nz-form-control>
+              <nz-date-picker
+                formControlName="toDate"
+                nzPlaceHolder="To Date"
+                [nzFormat]="dateFormat"
+                id="toDate"
+              ></nz-date-picker>
+            </nz-form-control>
+          </nz-form-item>
+  
+          <div style="text-align: center; margin-top: 20px;">
+            <button class="filterBtn" nz-button nzType="primary" (click)="bookACar(validateForm.value)">
+              Book Car
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

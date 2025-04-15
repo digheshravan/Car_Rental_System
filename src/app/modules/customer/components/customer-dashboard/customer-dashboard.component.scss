@@ -1,0 +1,128 @@
+.container {
+    background-color: #F8F8F8;
+    min-height: 91vh;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.car-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 1000px;
+    margin-bottom: 25px;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.car-card:hover {
+    transform: translateY(-5px);
+}
+
+.car-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.car-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.car-image {
+    height: 200px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 1px solid #eee;
+}
+
+.car-details {
+    padding-left: 25px;
+    flex: 1;
+}
+
+.car-title {
+    color: #108ee9;
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.car-info {
+    font-size: 18px;
+    color: #444;
+    line-height: 1.8;
+    margin: 10px 0;
+}
+
+.car-details hr {
+    margin: 10px 0;
+}
+
+/* Cool Book Button Styling */
+.book-btn {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 114, 255, 0.4);
+    position: relative;
+    overflow: hidden;
+    float: right;
+}
+
+.book-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 114, 255, 0.6);
+}
+
+.book-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-25deg);
+    transition: 0.5s;
+}
+
+.book-btn:hover::after {
+    left: 125%;
+}
+
+@media (max-width: 768px) {
+    .car-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .car-details {
+        padding-left: 0;
+        margin-top: 20px;
+    }
+
+    .book-btn {
+        float: none;
+        margin: 10px auto 0;
+    }
+
+    .car-image {
+        width: 100%;
+        height: auto;
+    }
+}

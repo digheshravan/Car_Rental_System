@@ -1,0 +1,125 @@
+.booking-table-wrapper {
+    padding: 1rem;
+    background-color: #f4f7fb;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-top: 0rem;
+    max-width: 100%;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+}
+
+.styled-booking-table ::ng-deep thead tr {
+    background: linear-gradient(to right, #003973, #e5e5be);
+    color: white;
+    text-align: center;
+    font-size: 18px;
+}
+
+.styled-booking-table ::ng-deep th {
+    font-weight: 900;
+    font-style: bold;
+    padding: 14px 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.styled-booking-table ::ng-deep td {
+    padding: 12px 20px;
+    font-size: 15px;
+    background-color: #ffffff;
+    text-align: center;
+    vertical-align: middle;
+    color: #333;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.styled-booking-table ::ng-deep tbody tr {
+    transition: transform 0.3s ease;
+}
+
+.styled-booking-table ::ng-deep tbody tr:hover {
+    background-color: #f1faff;
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+.status-approved {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.status-pending {
+    color: #ff9800;
+    font-weight: 600;
+}
+
+.status-rejected {
+    color: #f44336;
+    font-weight: 600;
+}
+
+.car-image {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.car-image:hover {
+    transform: scale(1.2); /* Slight zoom effect */
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.styled-booking-table ::ng-deep td:first-child {
+    text-align: center; /* Ensure the image aligns properly */
+}
+
+.styled-booking-table ::ng-deep td,
+.styled-booking-table ::ng-deep th {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #555;
+}
+
+.styled-booking-table ::ng-deep thead tr {
+    background: #003973; /* Stronger blue for headers */
+    font-weight: 700;
+}
+
+.styled-booking-table ::ng-deep td {
+    font-size: 14px;
+    color: #333;
+}
+
+.styled-booking-table ::ng-deep tbody tr:hover {
+    background-color: #f0f8ff;
+    transition: background-color 0.3s ease;
+}
+.payment-btn {
+    background-color: #4CAF50; /* Green color for approved */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.payment-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.05);
+}
+
+.payment-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.3);
+}

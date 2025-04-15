@@ -1,0 +1,114 @@
+<div>
+  <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working...">
+    <div class="parent">
+      <div class="child">
+        <h2 style="text-align: center">Post Car</h2>
+        <form nz-form [formGroup]="postCarForm" (ngSubmit)="postCar()">
+          <div nz-row>
+            <!-- Image Upload -->
+            <div nz-col nzSpan="24">
+              <div class="profile-badge">
+                <label for="upload_profile_image" class="upload-label" *ngIf="selectedFile">
+                  <img class="profile" [src]="imagePreview" alt="Car Image" />
+                </label>
+                <input type="file" id="upload_profile_image" accept="image/*" (change)="onFileSelected($event)" />
+              </div>
+            </div>
+
+            <!-- Brand Selection -->
+            <div nz-col nzSpan="24">
+              <nz-form-item>
+                <nz-form-control nzErrorTip="This Input Is Required!">
+                  <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Brand" formControlName="brand" name="brand">
+                    <nz-option *ngFor="let brand of listOfBrands" [nzLabel]="brand" [nzValue]="brand"></nz-option>
+                  </nz-select>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+
+            <!-- Model Name -->
+            <div nz-col nzSpan="24">
+              <nz-form-item>
+                <nz-form-control nzErrorTip="This Input Is Required!">
+                  <input nz-input placeholder="Model Name" formControlName="modelName" name="modelName" />
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+
+            <!-- Fuel Type -->
+            <div nz-col nzSpan="24">
+              <nz-form-item>
+                <nz-form-control nzErrorTip="This Input Is Required!">
+                  <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select Fuel Type" formControlName="fuelType" name="fuelType">
+                    <nz-option *ngFor="let fuel of listOfFuelTypes" [nzLabel]="fuel" [nzValue]="fuel"></nz-option>
+                  </nz-select>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+
+            <!-- Transmission -->
+            <div nz-col nzSpan="24">
+              <nz-form-item>
+                <nz-form-control nzErrorTip="This Input Is Required!">
+                  <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select Transmission" formControlName="transmission" name="transmission">
+                    <nz-option *ngFor="let transmission of listOfTransmission" [nzLabel]="transmission" [nzValue]="transmission"></nz-option>
+                  </nz-select>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+
+            <!-- Color -->
+            <div nz-col nzSpan="24">
+              <nz-form-item>
+                <nz-form-control nzErrorTip="This Input Is Required!">
+                  <input nz-input placeholder="Color" formControlName="color" name="color" />
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+
+            <!-- Model Year -->
+            <div nz-col nzSpan="24">
+              <nz-form-item>
+                <nz-form-control nzErrorTip="This Input Is Required!">
+                  <input nz-input type="number" placeholder="Model Year" formControlName="modelYear" name="modelYear" />
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+
+            <!-- Rental Price -->
+            <div nz-col nzSpan="24">
+              <nz-form-item>
+                <nz-form-control nzErrorTip="This Input Is Required!">
+                  <input nz-input type="number" placeholder="Rental Price" formControlName="rentalPrice" name="rentalPrice" />
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+
+            <!-- Car Number -->
+            <div nz-col nzSpan="24">
+              <nz-form-item>
+                <nz-form-control nzErrorTip="This Input Is Required!">
+                  <input nz-input placeholder="Car Number" formControlName="carNumber" name="carNumber" />
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+
+            <!-- Capacity -->
+            <div nz-col nzSpan="24">
+              <nz-form-item>
+                <nz-form-control nzErrorTip="This Input Is Required!">
+                  <input nz-input type="number" placeholder="Capacity" formControlName="capacity" name="capacity" />
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div style="text-align: center; margin-top: 20px">
+            <button nz-button nzType="primary" [disabled]="postCarForm.invalid">Post Car</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nz-spin>
+</div>

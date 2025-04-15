@@ -1,0 +1,158 @@
+/* Parent container styling */
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #ffffff;
+  padding: 20px;
+}
+
+/* Child container styling (Glassmorphism effect) */
+.child {
+  width: 55%;
+  min-height: 80vh; /* Increased height to fit more content */
+  background: rgba(255, 255, 255, 0.15); /* Semi-transparent */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centering content inside */
+}
+
+.child:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Header styling */
+h2 {
+  text-align: center;
+  color: #333;
+  font-size: 26px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+/* Image upload styling */
+.profile-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #007bff;
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile:hover {
+  transform: scale(1.1);
+}
+
+.upload-label {
+  cursor: pointer;
+  text-align: center;
+  color: #007bff;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.upload-label:hover {
+  color: #0056b3;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Input field styling */
+nz-form-item {
+  width: 100%;
+}
+
+nz-select,
+input[nz-input] {
+  width: 100%;
+  height: 55px;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  padding: 14px;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+  color: #333;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Placeholder styling */
+nz-select::placeholder,
+input[nz-input]::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Input hover & focus effects */
+nz-select:hover,
+input[nz-input]:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+nz-select:focus,
+input[nz-input]:focus {
+  border-color: #007bff;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
+}
+
+/* Submit Button Styling */
+button {
+  width: 100%;
+  height: 55px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #28a745, #218838); /* Green gradient */
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #218838, #1e7e34);
+  transform: scale(1.05);
+  box-shadow: 0px 4px 15px rgba(33, 136, 56, 0.5);
+}
+button:disabled {
+  background: linear-gradient(135deg, #dc3545, #c82333); /* Red gradient */
+  cursor: not-allowed;
+  opacity: 0.9;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+  .child {
+    width: 90%;
+    min-height: auto;
+    padding: 25px;
+  }
+}

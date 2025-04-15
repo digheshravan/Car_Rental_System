@@ -1,0 +1,19 @@
+<div *ngIf="isLoading">
+    <nz-spin nzSimple></nz-spin>
+    <p>Loading payment details...</p>
+  </div>
+<div *ngIf="!isLoading && paymentDetails">
+    <h2>Payment Details</h2>
+    <p><strong>Amount:</strong> {{ paymentDetails.price  }}</p>
+    <p><strong>Method:</strong> {{ paymentDetails.method }}</p>
+    <p><strong>Status:</strong> {{ paymentDetails.status }}</p>
+    <p><strong>Transaction ID:</strong> {{ paymentDetails?.transactionId }}</p>
+  
+    <!-- Payment Button -->
+    <button (click)="initiatePayment()">Proceed to Pay</button>
+  </div>
+  
+  <div *ngIf="!isLoading && !paymentDetails">
+    <p>Loading payment details...</p>
+  </div>
+  

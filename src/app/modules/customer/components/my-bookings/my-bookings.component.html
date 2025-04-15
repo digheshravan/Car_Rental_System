@@ -1,0 +1,51 @@
+<div class="booking-table-wrapper">
+  <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working...">
+    <nz-table class="styled-booking-table" [nzData]="bookings" [nzPageSize]="20" [nzShowPagination]="false">
+      <thead>
+        <tr>
+          <th>Car Image</th>
+          <th>Car Brand</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Days</th>
+          <th>Price</th>
+          <th>Status</th>
+          <th>Payment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booking of bookings">
+          <td>
+            <img
+              *ngIf="booking.returnedImage"
+              class="car-image"
+              [src]="'data:image/jpeg;base64,' + booking.returnedImage"
+              alt="Car Image"
+            />
+          </td>
+          <td>{{ booking.brand }}</td>
+          <td>{{ booking.fromDate | date: 'MMM d, y' }}</td>
+          <td>{{ booking.toDate | date: 'MMM d, y' }}</td>
+          <td>{{ booking.days }}</td>
+          <td>₹{{ booking.price }}/-</td>
+          <td>
+            <strong
+              [ngClass]="{
+                'status-approved': booking.bookCarStatus === 'APPROVED',
+                'status-pending': booking.bookCarStatus === 'PENDING',
+                'status-rejected': booking.bookCarStatus === 'REJECTED'
+              }"
+            >
+              {{ booking.bookCarStatus }}
+            </strong>
+          </td>
+          <td *ngIf="booking.bookCarStatus === 'APPROVED'">
+            <button class="payment-btn" (click)="goToPayment(booking.id)">
+                Pay ₹{{ booking.price }}/-
+            </button>
+        </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </nz-spin>
+</div>

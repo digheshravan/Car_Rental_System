@@ -1,0 +1,27 @@
+.custom-navbar{
+    background-color: #003973;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px ;
+
+    .navbar-title{
+        >a{
+            color: white;
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: bolder;
+        }
+    }
+    .nav-links{
+        display: flex;
+        align-items: center;
+
+        a{
+            color: white;
+            margin-left: 24px;
+            cursor: pointer;
+            pointer-events: auto;
+        }
+    }
+}

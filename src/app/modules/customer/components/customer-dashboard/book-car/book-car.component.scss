@@ -1,0 +1,147 @@
+/* Container */
+.container {
+  background-color: #F8F8F8;
+  min-height: 91vh;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Car Card */
+.car-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 1000px;
+  margin-bottom: 30px;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.car-card:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  transform: none !important;
+}
+.car-card:hover .car-image {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+.car-card:hover .car-title {
+  color: #0055cc;
+  transition: color 0.3s ease-in-out;
+}
+
+
+/* Car Row */
+.car-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Image Container */
+.car-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+/* Car Image */
+.car-image {
+  height: 200px;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid #eee;
+}
+
+/* Car Details */
+.car-details {
+  padding-left: 25px;
+  flex: 1;
+}
+
+.car-title {
+  color: #108ee9;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.car-info {
+  font-size: 18px;
+  color: #444;
+  line-height: 1.8;
+  margin: 10px 0;
+}
+
+.car-details hr {
+  margin: 10px 0;
+}
+/* ▶ Floating Form Container */
+.floating-form-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Optional: Form Title */
+.floating-form-wrapper h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #0055cc;
+}
+.floating-form-wrapper {
+  position: fixed;
+  top: 400px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  pointer-events: auto;
+
+  /* Hard stop to all animations */
+  transition: none !important;
+
+  /* Prevent size changes */
+  will-change: auto;
+}
+
+/* LOCK hover state - no new shadow, no transforms */
+.floating-form-wrapper:hover {
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1) !important;
+  transform: translateX(-50%) !important;
+}
+
+/* Optional: Dimmed Background */
+.floating-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 999;
+}
+
+

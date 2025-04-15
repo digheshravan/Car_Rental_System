@@ -1,0 +1,86 @@
+<div class="inner-content">
+    <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working...">
+        <div class="dashboard-filter">
+            <div class="filter-grid" [formGroup]="searchCarFrom">
+
+                <!-- Each row contains 2 form items (responsive) -->
+                <div class="form-row">
+                    <nz-form-item>
+                        <nz-form-label nzFor="brand">Brand</nz-form-label>
+                        <nz-form-control nzErrorTip="This Input Is Required!">
+                            <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Brand" formControlName="brand">
+                                <nz-option *ngFor="let brand of listOfBrands" [nzLabel]="brand"
+                                    [nzValue]="brand"></nz-option>
+                            </nz-select>
+                        </nz-form-control>
+                    </nz-form-item>
+
+                    <nz-form-item>
+                        <nz-form-label nzFor="fuelType">Type</nz-form-label>
+                        <nz-form-control nzErrorTip="This Input Is Required!">
+                            <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select Fuel Type"
+                                formControlName="fuelType">
+                                <nz-option *ngFor="let fuelType of listOfFuelTypes" [nzLabel]="fuelType"
+                                    [nzValue]="fuelType"></nz-option>
+                            </nz-select>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+                <div class="form-row">
+                    <nz-form-item>
+                        <nz-form-label nzFor="color">Color</nz-form-label>
+                        <nz-form-control nzErrorTip="This Input Is Required!">
+                            <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Color" formControlName="color">
+                                <nz-option *ngFor="let color of listOfColor" [nzLabel]="color"
+                                    [nzValue]="color"></nz-option>
+                            </nz-select>
+                        </nz-form-control>
+                    </nz-form-item>
+
+                    <nz-form-item>
+                        <nz-form-label nzFor="transmission">Transmission</nz-form-label>
+                        <nz-form-control nzErrorTip="This Input Is Required!">
+                            <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Transmission"
+                                formControlName="transmission">
+                                <nz-option *ngFor="let transmission of listOfTransmission" [nzLabel]="transmission"
+                                    [nzValue]="transmission"></nz-option>
+                            </nz-select>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+                <!-- Button on new line -->
+                <div class="filter-button-wrapper">
+                    <button class="filterbtn" nz-button nzType="primary" (click)="searchCar()">
+                        Search Car
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </nz-spin>
+</div>
+<div class="container">
+    <div class="car-card" *ngFor="let car of cars">
+        <div nz-row class="car-row">
+            <div nz-col nzSpan="8" class="car-image-container">
+                <img class="car-image" [src]="car.processedImg" alt="Car Image" />
+            </div>
+            <div nz-col nzSpan="16" class="car-details">
+                <h2 class="car-title">
+                    {{ car.brand }} - {{ car.modelName }}
+                </h2>
+                <hr>
+                <h5 class="car-info">
+                    Price: <b>₹{{ car.rentalPrice }}</b>    - 
+                    Color: <b>{{ car.color }}</b> - 
+                    Transmission: <b>{{ car.transmission }}</b> - 
+                    Type: <b>{{ car.fuelType }}</b>
+                </h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+  

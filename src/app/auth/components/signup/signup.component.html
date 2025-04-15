@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+  <form nz-form [formGroup]="signupForm">
+    <h3>Signup</h3>
+
+    <div class="input-row">
+      <div class="input-group">
+        <label for="email">Enter Email</label>
+        <input type="text" placeholder="Email" id="email" formControlName="email" />
+        <div *ngIf="signupForm.controls['email'].invalid && signupForm.controls['email'].touched" class="error">
+          Please enter a valid email.
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="name">Enter Name</label>
+        <input type="text" placeholder="Name" id="name" formControlName="name" />
+        <div *ngIf="signupForm.controls['name'].invalid && signupForm.controls['name'].touched" class="error">
+          Name is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="input-row">
+      <div class="input-group">
+        <label for="phoneNumber">Enter Phone Number</label>
+        <input type="text" placeholder="Phone Number" id="phno" formControlName="phoneNumber" />
+        <div *ngIf="signupForm.controls['phoneNumber'].invalid && signupForm.controls['phoneNumber'].touched" class="error">
+          Please enter a valid 10-digit phone number.
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="password">Enter Password</label>
+        <input type="password" placeholder="Enter Password" id="password" formControlName="password" />
+        <div *ngIf="signupForm.controls['password'].invalid && signupForm.controls['password'].touched" class="error">
+          Password must be at least 6 characters long.
+        </div>
+      </div>
+    </div>
+
+    <div class="input-row">
+      <div class="input-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" placeholder="Confirm Password" id="confirmPassword" formControlName="confirmPassword" />
+        <div *ngIf="signupForm.value.password !== signupForm.value.confirmPassword && signupForm.controls['confirmPassword'].touched" class="error">
+          Passwords do not match.
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>Select Role:</label>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="role" value="CUSTOMER" formControlName="userRole" required />
+            Customer
+          </label>
+          <label>
+            <input type="radio" name="role" value="OWNER" formControlName="userRole" required />
+            Owner
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <button (click)="register()" [disabled]="signupForm.invalid">Sign Up</button>
+
+    <p class="signin-text">
+      Already have an account? <a href="/login" class="signin-link">Login</a>
+    </p>
+  </form>
+</body>
+</html>
